@@ -2,10 +2,15 @@
   "name": "translit-telegram-bot",
   "version": "1.0.0",
   "description": "Bot for translit from ru to eng and back",
-  "main": "/src/app.js",
-  "scripts": {
-    "test": "test"
+  "main": "../src/app.js",
+  "directories" : {
+    "test" : "../src/test/"
   },
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "mocha src/test/*.js"
+  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Grenguar/translit-telegram-bot.git"
@@ -21,5 +26,9 @@
   "homepage": "https://github.com/Grenguar/translit-telegram-bot#readme",
   "dependencies": {
     "node-telegram-bot-api": "^0.30.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.5"
   }
 }
