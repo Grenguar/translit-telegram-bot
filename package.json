@@ -1,0 +1,22 @@
+{
+  "name": "translit-telegram-bot",
+  "version": "1.0.0",
+  "description": "Bot for translit from ru to eng and back",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grenguar/translit-telegram-bot.git"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Igor Soroka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Grenguar/translit-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/Grenguar/translit-telegram-bot#readme"
+}
