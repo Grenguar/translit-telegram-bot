@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Grenguar/translit-telegram-bot#readme",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "node-telegram-bot-api": "^0.30.0"
   },
   "devDependencies": {
