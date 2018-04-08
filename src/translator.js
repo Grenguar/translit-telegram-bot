@@ -12,9 +12,9 @@ function translateRuToEn(string, dictionary) {
         if (isExist(dictionary[ch])) {
             ch = dictionary[ch];
         }
+        finalArray.push(ch);
     }
-
-    return finalArray;
+    return finalArray.join('');
 }
 
 module.exports.translateRuToEn = translateRuToEn;
