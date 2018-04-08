@@ -1,7 +1,3 @@
-function isExist(value) {
-    return value ? true : false;
-}
-
 function translateRuToEn(string, dictionary) {
     let originalStringArray = string.split('');
     let finalArray = [];
@@ -15,6 +11,10 @@ function translateRuToEn(string, dictionary) {
         finalArray.push(ch);
     }
     return finalArray.join('').toString();
+}
+
+function isExist(value) {
+    return !!value;
 }
 
 module.exports.translateRuToEn = translateRuToEn;
