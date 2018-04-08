@@ -14,7 +14,7 @@ function translateRuToEn(string, dictionary) {
         }
         finalArray.push(ch);
     }
-    return finalArray.join('');
+    return finalArray.join('').toString();
 }
 
 module.exports.translateRuToEn = translateRuToEn;

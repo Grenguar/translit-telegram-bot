@@ -27,7 +27,7 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 // messages.
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
-
-  // send a message to the chat acknowledging receipt of their message
-  bot.sendMessage(chatId, 'Received your message');
+  const messageText = msg.text;
+  const translatedMsg = translator.translateRuToEn(messageText, ruEnDict);
+  bot.sendMessage(chatId, translatedMsg);
 });
