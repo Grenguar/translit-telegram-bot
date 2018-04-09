@@ -72,12 +72,34 @@ describe('test suite for translator.js', function () {
 
         let string1 = "Shchelkunchik";
         let result1 = "Щелкунчик";
+        let string2 = "IachMen'";
+        let result2 = "ЯчМень";
+        let string3 = "Kak obstanovka?";
+        let result3 = "Как обстановка?";
+        let string4 = "V ocheredi za matcha latte";
+        let result4 = "В очереди за матча латте";
         const dict = dictionary.en_ru;
 
-        it('should fail because it is not completed', function () {
+        it('should return - Щeлкунчик', function () {
             let translateEnToRu = translator.translateEnToRu(string1, dict);
             expect(translateEnToRu).to.be.equal(result1);
         });
+
+        it('should return ЯчМень', function () {
+            let translateEnToRu = translator.translateEnToRu(string2, dict);
+            expect(translateEnToRu).to.be.equal(result2);
+        });
+
+        it('should return - Как обстановка?', function () {
+            let translateEnToRu = translator.translateEnToRu(string3, dict);
+            expect(translateEnToRu).to.be.equal(result3);
+        });
+
+        it('should return - В очереди за матча латте', function () {
+            let translateEnToRu = translator.translateEnToRu(string4, dict);
+            expect(translateEnToRu).to.be.equal(result4);
+        });
+
 
     });
 
