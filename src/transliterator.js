@@ -1,4 +1,14 @@
-function translateRuToEn(string, dictionary) {
+function transliterate(string) {
+    const dictionary = require("./dictionary.json");
+    return isEnglish(string) ? transliterateEnToRu(string, dictionary.en_ru)
+        : transliterateRuToEn(string, dictionary.ru_en);
+}
+
+function isEnglish(string) {
+    return /\w+/.test(string);
+}
+
+function transliterateRuToEn(string, dictionary) {
     return transliterateStringByLetter(string, dictionary).join('');
 }
 
@@ -10,11 +20,7 @@ function transliterateStringByLetter(string, dictionary) {
     return array;
 }
 
-function isExist(value) {
-    return !!value;
-}
-
-function translateEnToRu(string, dictionary) {
+function transliterateEnToRu(string, dictionary) {
     let finalArray = [];
     let tempWord = '';
     string.split(/\s+/).map(function(word) {
@@ -49,11 +55,7 @@ function transliterateComplcatedRussianLetters(word, dictionary) {
         .replace(/zh/g, dictionary['zh']);
 }
 
-function isEnglish(string) {
-    return /\w+/.test(string);
-}
-
-module.exports.translateRuToEn = translateRuToEn;
-module.exports.isExist = isExist;
+module.exports.transliterate = transliterate;
 module.exports.isEnglish = isEnglish;
-module.exports.translateEnToRu = translateEnToRu;
+module.exports.transliterateRuToEn = transliterateRuToEn;
+module.exports.transliterateEnToRu = transliterateEnToRu;
