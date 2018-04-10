@@ -5,6 +5,7 @@ const transliterator = require('./transliterator.js');
 // replace the value below with the Telegram token you receive from @BotFather
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {polling: true});
+const typingAdvice = "type any text/введи текст";
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
@@ -19,10 +20,26 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
   bot.sendMessage(chatId, resp);
 });
 
-
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
   const messageText = msg.text;
   const transliteratedMessage = transliterator.transliterate(messageText);
   bot.sendMessage(chatId, transliteratedMessage);
 });
+
+bot.on('inline_query', function (answer) {
+    let queryText = answer.query;
+    let transliteratedMessage = queryText === "" ? typingAdvice : transliterator.transliterate(queryText);
+    let newMessageContent = {
+      'message_text' : transliteratedMessage
+    };
+    let queryResult = {
+      'id' : answer.id,
+      'type' : 'article',
+      'title' : transliteratedMessage,
+      'input_message_content' : newMessageContent
+    };
+
+    bot.answerInlineQuery(answer.id, [queryResult]);
+});
+
