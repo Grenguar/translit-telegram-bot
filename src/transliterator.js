@@ -24,14 +24,14 @@ function transliterateEnToRu(string, dictionary) {
     let finalArray = [];
     let tempWord = '';
     string.split(/\s+/).map(function(word) {
-        tempWord = transliterateComplcatedRussianLetters(word, dictionary);
+        tempWord = transliterateComplicatedRussianLetters(word, dictionary);
         tempWord = transliterateStringByLetter(tempWord, dictionary).join('');
         finalArray.push(tempWord);
     });
     return finalArray.join(' ');
 }
 
-function transliterateComplcatedRussianLetters(word, dictionary) {
+function transliterateComplicatedRussianLetters(word, dictionary) {
     return word.replace(/Ch/g, dictionary['Ch'])
         .replace(/Ch/g, dictionary['Ch'])
         .replace(/Ia/g, dictionary['Ia'])
