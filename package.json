@@ -2,9 +2,9 @@
   "name": "translit-telegram-bot",
   "version": "1.0.0",
   "description": "Bot for translit from ru to eng and back",
-  "main": "../src/app.js",
+  "main": "src/app.js",
   "directories": {
-    "test": "../src/test/"
+    "test": "src/test/"
   },
   "scripts": {
     "start": "node src/app.js",
