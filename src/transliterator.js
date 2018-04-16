@@ -55,7 +55,19 @@ function transliterateComplicatedRussianLetters(word, dictionary) {
         .replace(/zh/g, dictionary['zh']);
 }
 
+function transliterateComplicatedRussianLetters2(word, dictionary) {
+    //For testing purposes
+    return Object.keys(dictionary).filter((key) => key.length > 1)
+        .reduce((memo, key) => {
+            console.log("replace called");
+            memo.replace(new RegExp(key, 'g'), dictionary[key]);
+        }, word);
+}
+
+
+
 module.exports.transliterate = transliterate;
 module.exports.isEnglish = isEnglish;
 module.exports.transliterateRuToEn = transliterateRuToEn;
 module.exports.transliterateEnToRu = transliterateEnToRu;
+module.exports.transliterateComplicatedRussianLetters2 = transliterateComplicatedRussianLetters2;
