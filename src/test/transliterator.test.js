@@ -99,14 +99,4 @@ describe('test suite for transliterator.js', function () {
         });
     });
 
-    describe('test experimental transliterateComplicatedRussianLetters2', function() {
-        it('should transliterate Rus -> Eng', function () {
-            let string1 = "Shchelkunchik";
-            let result1 = "Щелкунчик";
-            let transliterateString = transliterator.transliterateComplicatedRussianLetters2(string1, dictionary.en_ru);
-            expect(transliterateString).to.be.equal(result1);
-        });
-    });
-
-
 });

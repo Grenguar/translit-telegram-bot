@@ -32,42 +32,11 @@ function transliterateEnToRu(string, dictionary) {
 }
 
 function transliterateComplicatedRussianLetters(word, dictionary) {
-    return word.replace(/Ch/g, dictionary['Ch'])
-        .replace(/Ch/g, dictionary['Ch'])
-        .replace(/Ia/g, dictionary['Ia'])
-        .replace(/Ie/g, dictionary['Ie'])
-        .replace(/Iu/g, dictionary['Iu'])
-        .replace(/Je/g, dictionary['Je'])
-        .replace(/Kh/g, dictionary['Kh'])
-        .replace(/Shch/g, dictionary['Shch'])
-        .replace(/Sh/g, dictionary['Sh'])
-        .replace(/Ts/g, dictionary['Ts'])
-        .replace(/Zh/g, dictionary['Zh'])
-        .replace(/ch/g, dictionary['ch'])
-        .replace(/ia/g, dictionary['ia'])
-        .replace(/ie/g, dictionary['ie'])
-        .replace(/iu/g, dictionary['iu'])
-        .replace(/je/g, dictionary['je'])
-        .replace(/kh/g, dictionary['kh'])
-        .replace(/shch/g, dictionary['shch'])
-        .replace(/sh/g, dictionary['sh'])
-        .replace(/ts/g, dictionary['ts'])
-        .replace(/zh/g, dictionary['zh']);
-}
-
-function transliterateComplicatedRussianLetters2(word, dictionary) {
-    //For testing purposes
     return Object.keys(dictionary).filter((key) => key.length > 1)
-        .reduce((memo, key) => {
-            console.log("replace called");
-            memo.replace(new RegExp(key, 'g'), dictionary[key]);
-        }, word);
+        .reduce((memo, key) => memo.replace(new RegExp(key, 'g'), dictionary[key]), word);
 }
-
-
 
 module.exports.transliterate = transliterate;
 module.exports.isEnglish = isEnglish;
 module.exports.transliterateRuToEn = transliterateRuToEn;
 module.exports.transliterateEnToRu = transliterateEnToRu;
-module.exports.transliterateComplicatedRussianLetters2 = transliterateComplicatedRussianLetters2;
